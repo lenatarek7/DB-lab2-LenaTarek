@@ -347,3 +347,313 @@ body.dark-mode .theme-toggle {
 body.dark-mode a {
     color: #9ecbff;
 }
+/* Responsive layout and dark-mode improvements */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+button {
+    min-height: 40px;
+    touch-action: manipulation;
+}
+
+.task-row,
+.task-actions,
+.task-actions form {
+    min-width: 0;
+}
+
+.task-title {
+    overflow-wrap: anywhere;
+}
+
+.auth-page p,
+.auth-page ul {
+    overflow-wrap: anywhere;
+}
+
+/* Make all authentication text readable in dark mode */
+body.dark-mode .auth-page,
+body.dark-mode .auth-page h1,
+body.dark-mode .auth-page p,
+body.dark-mode .auth-page label,
+body.dark-mode .auth-page li,
+body.dark-mode .auth-page strong {
+    color: #f1f1f1;
+}
+
+body.dark-mode .auth-page form {
+    background-color: #242731;
+    border-color: #444957;
+    color: #f1f1f1;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #b9becb;
+    opacity: 1;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    outline-color: #a5a5ff;
+}
+
+body.dark-mode .auth-page a {
+    color: #a9caff;
+}
+
+/* Comfortable layout on phones */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+        overflow-wrap: anywhere;
+    }
+
+    .task-list {
+        width: 100%;
+    }
+
+    .task-row {
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .task-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .task-actions form {
+        flex-wrap: wrap;
+    }
+
+    .task-actions button {
+        min-height: 42px;
+        padding: 10px 12px;
+    }
+
+    .auth-page {
+        padding: 20px 12px;
+    }
+
+    .auth-page form {
+        padding: 20px 16px;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+    .task-actions {
+        justify-content: flex-start;
+    }
+
+    .task-actions .edit-form input {
+        width: 100%;
+    }
+
+    .auth-page form {
+        padding: 16px 12px;
+    }
+}/* Fix login and registration input text in dark mode */
+body.dark-mode .auth-page input,
+body.dark-mode .auth-page textarea,
+body.dark-mode .auth-page select {
+    background-color: #292c35;
+    color: #ffffff;
+    border: 1px solid #666d80;
+    caret-color: #ffffff;
+}
+
+body.dark-mode .auth-page input::placeholder,
+body.dark-mode .auth-page textarea::placeholder {
+    color: #c5cad5;
+    opacity: 1;
+}
+
+body.dark-mode .auth-page input:-webkit-autofill,
+body.dark-mode .auth-page input:-webkit-autofill:hover,
+body.dark-mode .auth-page input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    caret-color: #ffffff;
+    box-shadow: 0 0 0 1000px #292c35 inset;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+body.dark-mode .auth-page input:focus {
+    outline: 2px solid #a5a5ff;
+    border-color: #a5a5ff;
+}/* Make login and registration field labels visible in dark mode */
+body.dark-mode .auth-page label {
+    color: #ffffff !important;
+}
+
+/* Also keep labels readable if they use strong or span elements */
+body.dark-mode .auth-page label span,
+body.dark-mode .auth-page label strong {
+    color: #ffffff !important;
+}
+body.dark-mode.auth-page label,
+body.dark-mode.auth-page main label {
+    color: #ffffff !important;
+    display: block;
+    margin-bottom: 6px;
+}
+
+body.dark-mode.auth-page main {
+    color: #f1f1f1;
+}/* Responsive layout for phones, tablets and laptops */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Keep the main content centered on larger screens */
+main {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Make task lists and task rows flexible */
+.task-list {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-row {
+    min-width: 0;
+}
+
+.task-title {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.task-actions {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Make authentication forms fit the screen */
+.auth-page main {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-page form {
+    width: 100%;
+    max-width: 100%;
+}
+
+.auth-page input,
+.auth-page button {
+    max-width: 100%;
+}
+
+/* Phone screens */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .auth-page {
+        padding: 20px 12px;
+    }
+
+    .auth-page form {
+        padding: 18px 14px;
+    }
+
+    .task-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .task-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .task-actions form {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
+    .task-actions button,
+    button {
+        min-height: 44px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+    .auth-page form {
+        padding: 14px 10px;
+    }
+
+    .task-row {
+        padding: 12px 10px;
+    }
+
+    .task-actions button {
+        padding: 9px 10px;
+    }
+}

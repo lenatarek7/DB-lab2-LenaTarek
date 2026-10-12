@@ -7,10 +7,12 @@
     <title>Log In</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="auth-page"></body>
-<button type="button" id="theme-toggle" class="theme-toggle">
-    🌙 Dark mode
-</button>
+<body class="auth-page">
+
+    <button type="button" id="theme-toggle" class="theme-toggle">
+        🌙 Dark mode
+    </button>
+
     <main>
         <h1>Log in</h1>
         <p>Welcome back! Enter your account details.</p>
@@ -81,7 +83,7 @@
             }
         });
     </script>
+
     <script src="{{ url_for('static', filename='theme.js') }}"></script>
 </body>
 </html>
-```
