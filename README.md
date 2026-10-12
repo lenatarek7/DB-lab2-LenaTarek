@@ -1,5 +1,5 @@
 # Todo List Web Application
-
+lena tarek 2304005 done the whole project
 ## About the Project
 This project was made for Introduction to Database Systems Lab 2 using Python, Flask, and MySQL.
 
@@ -8,7 +8,8 @@ It allows users to register, log in, and manage their own tasks.
 ## Features
 - Register, log in, and log out
 - Add, edit, and delete tasks
-- Mark tasks as completed or undo them, dark mode
+- Mark tasks as completed or undo them, 
+- bouns : dark mode
 
 - Validate user input
 - Keep each user's tasks private
@@ -47,7 +48,7 @@ It allows users to register, log in, and manage their own tasks.
    python app.py
    ```
 
-6. Open http://127.0.0.1:5000 in your browser.
+6. Open http://127.0.0.1:5000/todos in your browser.
 
 ## How to Use
 Register an account, log in, and start adding tasks. You can edit, complete, or delete tasks whenever you want. Each user can only manage their own tasks.
@@ -58,5 +59,4 @@ Python, Flask, MySQL, PyMySQL, bcrypt, HTML, and CSS.
 ## Screenshots
 Screenshots of the application are saved in the `screenshots/` folder.
 
-## Author
-Created for Introduction to Database Systems Lab 2.
+
