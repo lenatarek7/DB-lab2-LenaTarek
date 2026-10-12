@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log In</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page"></body>
+<button type="button" id="theme-toggle" class="theme-toggle">
+    🌙 Dark mode
+</button>
+    <main>
+        <h1>Log in</h1>
+        <p>Welcome back! Enter your account details.</p>
+
+        <div id="errors" role="alert" aria-live="polite">
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+
+        <form id="login-form"
+              action="{{ url_for('login') }}"
+              method="POST"
+              novalidate>
+
+            <div>
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="255"
+                    value="{{ email }}"
+                    autocomplete="email"
+                >
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                >
+            </div>
+
+            <button type="submit">Log in</button>
+        </form>
+
+        <p>Don't have an account?
+            <a href="{{ url_for('register') }}">Create an account</a>
+        </p>
+    </main>
+
+    <script>
+        const form = document.getElementById("login-form");
+        const errorsBox = document.getElementById("errors");
+
+        form.addEventListener("submit", function (event) {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const errors = [];
+
+            if (!email) errors.push("Email is required");
+            if (!password) errors.push("Password is required");
+
+            errorsBox.replaceChildren();
+
+            if (errors.length > 0) {
+                event.preventDefault();
+
+                errors.forEach(function (message) {
+                    const p = document.createElement("p");
+                    p.textContent = message;
+                    errorsBox.appendChild(p);
+                });
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+</body>
+</html>
+```
